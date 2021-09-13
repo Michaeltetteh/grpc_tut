@@ -1,0 +1,5 @@
+grpcio==1.40.0
+grpcio-tools==1.40.0
+pkg_resources==0.0.0
+protobuf==3.17.3
+six==1.16.0
