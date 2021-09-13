@@ -1,10 +1,6 @@
 from concurrent import futures
-import random
 import grpc
-
-
 from sayhello_pb2 import (RequestMsg, ResponseMsg)
-
 import sayhello_pb2_grpc
 
 
