@@ -1,3 +1,5 @@
+//stub code gen command
+//python -m grpc_tools.protoc -I proto --python_out=./ --grpc_python_out=./ proto/django_grpc/main.proto
 syntax = "proto3";
 
 package django_grpc;
