@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package django_grpc;
+
+service Main {
+  rpc ping (Ping) returns (Pong) {}
+  rpc new_system_run (SystemRun) returns (SystemRunResponse) {}
+  rpc new_activation (Activation) returns (ActivationResponse) {}
+}
+
+message Ping {
+  string message = 1;
+}
+
+message Pong {
+  string message = 1;
+}
+
+message SystemEntity {
+  string category = 1;
+  string name = 2;
+  string identity = 3;
+}
+message SystemRun {
+  string system_id = 1;
+  repeated SystemEntity entities = 2;
+}
+message SystemRunResponse {
+  string run_id = 1;
+}
+
+message Activation {
+  string system_id = 1;
+  string run_id = 2;
+  SystemEntity entity = 3;
+}
+message ActivationResponse {
+  bool success = 1;
+}
