@@ -1,6 +1,6 @@
 import grpc
-from quickstart_grpc import account_pb2
-from quickstart_grpc import account_pb2_grpc
+from quickstart_grpc.account_proto import account_pb2
+from quickstart_grpc.account_proto import account_pb2_grpc
 from google.protobuf.json_format import MessageToJson
 
 

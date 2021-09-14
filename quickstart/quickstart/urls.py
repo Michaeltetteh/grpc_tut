@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from account.services import UserService
-from quickstart_grpc import account_pb2_grpc
+from quickstart_grpc.account_proto import account_pb2_grpc
 
 urlpatterns = [
     path('admin/', admin.site.urls),
