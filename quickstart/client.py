@@ -7,8 +7,6 @@ from quickstart_grpc.blog_proto import post_pb2, post_pb2_grpc
 
 with grpc.insecure_channel('localhost:50051') as channel:
     stub = account_pb2_grpc.UserControllerStub(channel)
-    #retreive
-    # print(stub.Retrieve(account_pb2.UserRetrieveRequest(id=1)))
     print(MessageToJson(stub.Retrieve(account_pb2.UserRetrieveRequest(id=1))))
 
     # #create
