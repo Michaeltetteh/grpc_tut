@@ -4,7 +4,7 @@ from django_grpc_framework.services import Service
 from blog.models import Post
 from blog.serializers import PostProtoSerializer
 
-
+from quickstart_grpc.blog_proto import post_pb2_grpc
 class PostService(Service):
     def List(self, request, context):
         posts = Post.objects.all()

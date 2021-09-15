@@ -17,17 +17,21 @@ with grpc.insecure_channel('localhost:50051') as channel:
 
     for user in stub.List(account_pb2.UserListRequest()):
         print(MessageToJson(user), end='')
-
+        print()
+    print()
     post_stub = post_pb2_grpc.PostControllerStub(channel)
     print('----- Create -----')
     response = post_stub.Create(post_pb2.Post(title='t1', content='c1'))
     print((MessageToJson(response)), end='')
+    print()
     print('----- List -----')
     for post in post_stub.List(post_pb2.PostListRequest()):
         print(MessageToJson(post), end='')
+    print()
     print('----- Retrieve -----')
     response = post_stub.Retrieve(post_pb2.PostRetrieveRequest(id=response.id))
     print(MessageToJson(response), end='')
+    print()
     print('----- Update -----')
     response = post_stub.Update(post_pb2.Post(id=response.id, title='t2', content='c2'))
     print(MessageToJson(response), end='')
